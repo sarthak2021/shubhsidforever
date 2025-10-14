@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shubham & Siddheshwari | Wedding Countdown</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+        padding: 20px 0;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 30px;
+        padding: 60px 40px 40px;
+        max-width: 800px;
+        width: 90%;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hearts {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        animation: heartbeat 1.5s infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.1);
+        }
+        50% {
+          transform: scale(1);
+        }
+      }
+
+      h1 {
+        font-family: "Great Vibes", cursive;
+        font-size: 4rem;
+        color: #c94b4b;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .subtitle {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        color: #555;
+        margin-bottom: 30px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      .date-box {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        padding: 20px 30px;
+        border-radius: 15px;
+        margin: 30px auto;
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: space-around;
+        margin: 40px 0;
+        flex-wrap: wrap;
+      }
+
+      .time-unit {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px 25px;
+        border-radius: 20px;
+        margin: 10px;
+        min-width: 140px;
+        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        transition: transform 0.3s ease;
+      }
+
+      .time-unit:hover {
+        transform: translateY(-10px);
+      }
+
+      .time-number {
+        font-size: 3rem;
+        font-weight: bold;
+        display: block;
+        font-family: "Playfair Display", serif;
+      }
+
+      .time-label {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 10px;
+        opacity: 0.9;
+      }
+
+      .message {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        color: #666;
+        margin-top: 30px;
+        font-style: italic;
+      }
+
+      .decorative-line {
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #c94b4b, transparent);
+        margin: 20px auto;
+      }
+
+      .rings {
+        font-size: 2rem;
+        margin-top: 20px;
+        animation: rotate 3s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .instagram-section {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 2px solid #f0f0f0;
+      }
+
+      .instagram-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        color: white;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 10px 25px rgba(188, 24, 136, 0.3);
+        margin-top: 15px;
+      }
+
+      .instagram-link:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(188, 24, 136, 0.5);
+      }
+
+      .instagram-icon {
+        font-size: 1.5rem;
+      }
+
+      .info-text {
+        color: #666;
+        font-size: 1rem;
+        margin-bottom: 10px;
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding-top: 25px;
+        border-top: 2px solid #f0f0f0;
+        color: #888;
+        font-size: 0.95rem;
+      }
+
+      .footer-heart {
+        color: #c94b4b;
+        font-size: 1.2rem;
+        animation: heartbeat 1.5s infinite;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        .subtitle {
+          font-size: 1rem;
+        }
+        .time-unit {
+          min-width: 100px;
+          padding: 20px 15px;
+        }
+        .time-number {
+          font-size: 2rem;
+        }
+        .instagram-link {
+          padding: 12px 25px;
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hearts">💕</div>
+
+      <h1>Shubham & Siddheshwari</h1>
+      <div class="decorative-line"></div>
+      <p class="subtitle">Are Getting Married</p>
+
+      <div class="date-box">📅 December 2nd, 2025</div>
+
+      <div class="countdown" id="countdown">
+        <div class="time-unit">
+          <span class="time-number" id="days">00</span>
+          <span class="time-label">Days</span>
+        </div>
+        <div class="time-unit">
+          <span class="time-number" id="hours">00</span>
+          <span class="time-label">Hours</span>
+        </div>
+        <div class="time-unit">
+          <span class="time-number" id="minutes">00</span>
+          <span class="time-label">Minutes</span>
+        </div>
+        <div class="time-unit">
+          <span class="time-number" id="seconds">00</span>
+          <span class="time-label">Seconds</span>
+        </div>
+      </div>
+
+      <p class="message">
+        "Two souls with but a single thought, two hearts that beat as one."
+      </p>
+
+      <div class="rings">💍</div>
+
+      <div class="instagram-section">
+        <p class="info-text">For more details and updates:</p>
+        <a
+          href="https://instagram.com/shubhsidforever"
+          target="_blank"
+          class="instagram-link"
+        >
+          <span class="instagram-icon">📷</span>
+          <span>@shubhsidforever</span>
+        </a>
+      </div>
+
+      <div class="footer">
+        Made with <span class="footer-heart">♥</span> from Sarthak
+      </div>
+    </div>
+
+    <script>
+      const weddingDate = new Date("December 2, 2025 00:00:00").getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        if (distance < 0) {
+          document.getElementById("countdown").innerHTML =
+            "<div style=\"font-size: 2.5rem; color: #c94b4b; font-family: 'Great Vibes', cursive;\">🎉 It's Our Wedding Day! 🎉</div>";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("hours").textContent = String(hours).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("minutes").textContent = String(
+          minutes
+        ).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(
+          seconds
+        ).padStart(2, "0");
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    </script>
+  </body>
+</html>
