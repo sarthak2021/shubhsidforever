@@ -1,337 +1,962 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shubham & Siddheshwari | Wedding Countdown</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Montserrat", sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow-x: hidden;
-        padding: 20px 0;
-      }
-
-      .container {
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 30px;
-        padding: 60px 40px 40px;
-        max-width: 800px;
-        width: 90%;
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        animation: fadeIn 1.5s ease-in-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .hearts {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        animation: heartbeat 1.5s infinite;
-      }
-
-      @keyframes heartbeat {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        25% {
-          transform: scale(1.1);
-        }
-        50% {
-          transform: scale(1);
-        }
-      }
-
-      h1 {
-        font-family: "Great Vibes", cursive;
-        font-size: 4rem;
-        color: #c94b4b;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .subtitle {
-        font-family: "Playfair Display", serif;
-        font-size: 1.3rem;
-        color: #555;
-        margin-bottom: 30px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-      }
-
-      .date-box {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        color: white;
-        padding: 20px 30px;
-        border-radius: 15px;
-        margin: 30px auto;
-        display: inline-block;
-        font-size: 1.5rem;
-        font-weight: bold;
-        box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
-      }
-
-      .countdown {
-        display: flex;
-        justify-content: space-around;
-        margin: 40px 0;
-        flex-wrap: wrap;
-      }
-
-      .time-unit {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 30px 25px;
-        border-radius: 20px;
-        margin: 10px;
-        min-width: 140px;
-        box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
-        transition: transform 0.3s ease;
-      }
-
-      .time-unit:hover {
-        transform: translateY(-10px);
-      }
-
-      .time-number {
-        font-size: 3rem;
-        font-weight: bold;
-        display: block;
-        font-family: "Playfair Display", serif;
-      }
-
-      .time-label {
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-top: 10px;
-        opacity: 0.9;
-      }
-
-      .message {
-        font-family: "Playfair Display", serif;
-        font-size: 1.2rem;
-        color: #666;
-        margin-top: 30px;
-        font-style: italic;
-      }
-
-      .decorative-line {
-        width: 200px;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #c94b4b, transparent);
-        margin: 20px auto;
-      }
-
-      .rings {
-        font-size: 2rem;
-        margin-top: 20px;
-        animation: rotate 3s linear infinite;
-      }
-
-      @keyframes rotate {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      .instagram-section {
-        margin-top: 40px;
-        padding-top: 30px;
-        border-top: 2px solid #f0f0f0;
-      }
-
-      .instagram-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: linear-gradient(
-          45deg,
-          #f09433 0%,
-          #e6683c 25%,
-          #dc2743 50%,
-          #cc2366 75%,
-          #bc1888 100%
-        );
-        color: white;
-        padding: 15px 30px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-size: 1.1rem;
-        font-weight: 500;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 10px 25px rgba(188, 24, 136, 0.3);
-        margin-top: 15px;
-      }
-
-      .instagram-link:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(188, 24, 136, 0.5);
-      }
-
-      .instagram-icon {
-        font-size: 1.5rem;
-      }
-
-      .info-text {
-        color: #666;
-        font-size: 1rem;
-        margin-bottom: 10px;
-      }
-
-      .footer {
-        margin-top: 40px;
-        padding-top: 25px;
-        border-top: 2px solid #f0f0f0;
-        color: #888;
-        font-size: 0.95rem;
-      }
-
-      .footer-heart {
-        color: #c94b4b;
-        font-size: 1.2rem;
-        animation: heartbeat 1.5s infinite;
-      }
-
-      @media (max-width: 600px) {
-        h1 {
-          font-size: 2.5rem;
-        }
-        .subtitle {
-          font-size: 1rem;
-        }
-        .time-unit {
-          min-width: 100px;
-          padding: 20px 15px;
-        }
-        .time-number {
-          font-size: 2rem;
-        }
-        .instagram-link {
-          padding: 12px 25px;
-          font-size: 1rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="hearts">💕</div>
-
-      <h1>Shubham & Siddheshwari</h1>
-      <div class="decorative-line"></div>
-      <p class="subtitle">Are Getting Married</p>
-
-      <div class="date-box">📅 December 2nd, 2025</div>
-
-      <div class="countdown" id="countdown">
-        <div class="time-unit">
-          <span class="time-number" id="days">00</span>
-          <span class="time-label">Days</span>
-        </div>
-        <div class="time-unit">
-          <span class="time-number" id="hours">00</span>
-          <span class="time-label">Hours</span>
-        </div>
-        <div class="time-unit">
-          <span class="time-number" id="minutes">00</span>
-          <span class="time-label">Minutes</span>
-        </div>
-        <div class="time-unit">
-          <span class="time-number" id="seconds">00</span>
-          <span class="time-label">Seconds</span>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shubham & Siddheshwari | Wedding Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fff;
+      overflow-x: hidden;
+    }
+    
+    /* Floating Particles Background */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .particle {
+      position: absolute;
+      background: rgba(220, 20, 60, 0.3);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 40px 20px 60px;
+    }
+    
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('couple-photo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 2;
+      animation: zoomIn 20s infinite alternate;
+    }
+    
+    @keyframes zoomIn {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+    
+    .hero-background::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 192, 203, 0.4), rgba(255, 240, 245, 0.6));
+      z-index: 1;
+    }
+    
+    .hero-background::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+      z-index: 2;
+    }
+    
+    /* Ornamental Border */
+    .ornamental-frame {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      border: 3px double rgba(220, 20, 60, 0.3);
+      z-index: 3;
+      pointer-events: none;
+      border-radius: 10px;
+    }
+    
+    .ornamental-frame::before,
+    .ornamental-frame::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border: 2px solid rgba(220, 20, 60, 0.4);
+    }
+    
+    .ornamental-frame::before {
+      top: -10px;
+      left: -10px;
+      border-right: none;
+      border-bottom: none;
+    }
+    
+    .ornamental-frame::after {
+      bottom: -10px;
+      right: -10px;
+      border-left: none;
+      border-top: none;
+    }
+    
+    /* Wedding Logo - Animated Circle */
+    .wedding-logo {
+      position: relative;
+      z-index: 10;
+      background: linear-gradient(135deg, #fff 0%, #fffaf0 100%);
+      padding: 20px;
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 60px rgba(220, 20, 60, 0.3), 0 0 0 10px rgba(255,192,203,0.2), 0 0 0 20px rgba(255,192,203,0.1);
+      margin-bottom: 40px;
+      animation: logoFloat 3s infinite ease-in-out;
+      border: 5px solid rgba(220, 20, 60, 0.2);
+    }
+    
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    .logo-text {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, #c94b4b, #dc143c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Hero Content */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+      width: 90%;
+    }
+    
+    .heart-icon {
+      font-size: 4rem;
+      animation: heartPulse 2s infinite;
+      filter: drop-shadow(0 5px 15px rgba(220, 20, 60, 0.4));
+    }
+    
+    @keyframes heartPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    
+    .couple-names {
+      font-family: 'Cinzel', serif;
+      font-size: 4rem;
+      background: linear-gradient(135deg, #8b0000, #dc143c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 30px 0 20px;
+      font-weight: 700;
+      text-shadow: 0 5px 15px rgba(220, 20, 60, 0.2);
+      letter-spacing: 3px;
+      animation: fadeInUp 1.5s ease-out;
+      filter: drop-shadow(0 2px 4px rgba(220, 20, 60, 0.2));
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Decorative Flourish */
+    .flourish {
+      width: 250px;
+      height: 50px;
+      margin: 20px auto;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40"><path d="M10,20 Q50,10 100,20 T190,20" stroke="%23dc143c" stroke-width="2" fill="none" opacity="0.5"/><circle cx="100" cy="20" r="3" fill="%23dc143c" opacity="0.7"/></svg>') center no-repeat;
+      background-size: contain;
+      animation: fadeInUp 2s ease-out;
+    }
+    
+    .hashtag {
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 30px 0 20px;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 2px;
+      animation: glow 2s infinite alternate;
+      filter: drop-shadow(0 2px 4px rgba(220, 20, 60, 0.3));
+    }
+    
+    @keyframes glow {
+      from { filter: drop-shadow(0 2px 4px rgba(220, 20, 60, 0.3)); }
+      to { filter: drop-shadow(0 5px 10px rgba(220, 20, 60, 0.5)); }
+    }
+    
+    .wedding-date {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #8b0000, #dc143c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 40px;
+      font-weight: 600;
+      letter-spacing: 8px;
+      animation: fadeInUp 2.5s ease-out;
+      filter: drop-shadow(0 2px 4px rgba(220, 20, 60, 0.2));
+    }
+    
+    /* Glass Morphism Countdown */
+    .countdown-section {
+      background: linear-gradient(135deg, #fff5f7, #fffbfc);
+      padding: 80px 20px;
+      text-align: center;
+      border-top: 2px solid rgba(220, 20, 60, 0.1);
+      border-bottom: 2px solid rgba(220, 20, 60, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .countdown-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,192,203,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: backgroundMove 20s linear infinite;
+    }
+    
+    @keyframes backgroundMove {
+      from { transform: translate(0, 0); }
+      to { transform: translate(50px, 50px); }
+    }
+    
+    .countdown {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      gap: 30px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .time-unit {
+      background: linear-gradient(145deg, #ffffff, #fff5f7);
+      color: #8b0000;
+      padding: 40px 35px;
+      border-radius: 25px;
+      min-width: 180px;
+      box-shadow: 0 20px 50px rgba(220, 20, 60, 0.2), inset 0 1px 0 rgba(255,255,255,1);
+      transition: all 0.4s ease;
+      border: 3px solid rgba(220, 20, 60, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .time-unit::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(220,20,60,0.1), transparent);
+      transform: rotate(45deg);
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
+    .time-unit:hover {
+      transform: translateY(-15px) scale(1.05);
+      box-shadow: 0 30px 60px rgba(220, 20, 60, 0.3);
+      border-color: rgba(220, 20, 60, 0.4);
+    }
+    
+    .time-number {
+      font-size: 4rem;
+      font-weight: bold;
+      display: block;
+      font-family: 'Cinzel', serif;
+      background: linear-gradient(135deg, #8b0000, #dc143c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .time-label {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-top: 12px;
+      color: #666;
+      font-weight: 600;
+    }
+    
+    /* Navigation */
+    nav {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 25px 0;
+      text-align: center;
+      box-shadow: 0 5px 30px rgba(220, 20, 60, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid rgba(220, 20, 60, 0.1);
+    }
+    
+    nav a {
+      background: linear-gradient(135deg, #8b0000, #dc143c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+      margin: 0 30px;
+      font-weight: 600;
+      transition: all 0.3s;
+      font-size: 1.1rem;
+      position: relative;
+      letter-spacing: 2px;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #dc143c, #ff6b6b);
+      transition: width 0.3s;
+    }
+    
+    nav a:hover::after { width: 100%; }
+    nav a:hover { filter: drop-shadow(0 2px 5px rgba(220, 20, 60, 0.4)); }
+    
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px;
+      background: #ffffff;
+    }
+    
+    .section-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4.5rem;
+      background: linear-gradient(135deg, #8b0000, #dc143c, #ff6b6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 150px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #dc143c, transparent);
+      margin: 20px auto;
+    }
+    
+    /* Story Section */
+    .story-content {
+      font-size: 1.2rem;
+      line-height: 2;
+      color: #555;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(135deg, #fff5f7, #ffffff);
+      border-radius: 20px;
+      border: 2px solid rgba(220, 20, 60, 0.1);
+      box-shadow: 0 10px 40px rgba(220, 20, 60, 0.1);
+    }
+    
+    /* Event Cards - Premium Style */
+    .events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    
+    .event-card {
+      background: linear-gradient(145deg, #ffffff, #fff5f7);
+      padding: 45px 35px;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(220, 20, 60, 0.15);
+      text-align: center;
+      transition: all 0.4s;
+      border: 3px solid rgba(220, 20, 60, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .event-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(220,20,60,0.05), transparent);
+      transition: left 0.6s;
+    }
+    
+    .event-card:hover::before { left: 100%; }
+    
+    .event-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 60px rgba(220, 20, 60, 0.25);
+      border-color: rgba(220, 20, 60, 0.3);
+    }
+    
+    .event-icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 5px 15px rgba(220, 20, 60, 0.3));
+    }
+    
+    .event-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      background: linear-gradient(135deg, #8b0000, #dc143c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .event-details {
+      color: #666;
+      line-height: 2;
+      font-size: 1.05rem;
+    }
+    
+    .event-details p {
+      margin: 10px 0;
+    }
+    
+    /* Map Section */
+    .map-container {
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(220, 20, 60, 0.2);
+      margin-top: 50px;
+      height: 500px;
+      border: 3px solid rgba(220, 20, 60, 0.15);
+    }
+    
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Instagram Section */
+    .instagram-section {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #fff0f3, #ffe5e9);
+      color: #8b0000;
+      position: relative;
+      overflow: hidden;
+      border-top: 2px solid rgba(220, 20, 60, 0.2);
+      border-bottom: 2px solid rgba(220, 20, 60, 0.2);
+    }
+    
+    .instagram-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(220,20,60,0.05) 2px, transparent 2px);
+      background-size: 40px 40px;
+    }
+    
+    .instagram-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      background: linear-gradient(135deg, #dc143c, #ff6b6b);
+      color: white;
+      padding: 20px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 700;
+      transition: all 0.4s ease;
+      box-shadow: 0 15px 40px rgba(220, 20, 60, 0.3);
+      margin-top: 30px;
+      position: relative;
+      z-index: 2;
+      letter-spacing: 1px;
+    }
+    
+    .instagram-link:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 20px 50px rgba(220, 20, 60, 0.4);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #fff5f7, #ffffff);
+      color: #555;
+      text-align: center;
+      padding: 50px 20px;
+      border-top: 2px solid rgba(220, 20, 60, 0.15);
+    }
+    
+    .footer-heart {
+      color: #dc143c;
+      animation: heartPulse 2s infinite;
+      font-size: 1.3rem;
+    }
+    
+    /* Music Control Bar - Bottom Right */
+    .music-control-bar {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: white;
+      padding: 15px 25px;
+      border-radius: 50px;
+      box-shadow: 0 10px 40px rgba(220, 20, 60, 0.3);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      gap: 20px;
+      border: 2px solid rgba(220, 20, 60, 0.2);
+      transition: transform 0.3s ease;
+    }
+    
+    .music-control-bar:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(220, 20, 60, 0.4);
+    }
+    
+    .music-icon {
+      font-size: 1.5rem;
+      color: #8b0000;
+    }
+    
+    .music-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.8rem;
+      color: #8b0000;
+      padding: 5px;
+      transition: transform 0.2s;
+    }
+    
+    .music-button:hover {
+      transform: scale(1.2);
+    }
+    
+    .volume-icon {
+      font-size: 1.5rem;
+      color: #8b0000;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .volume-icon:hover {
+      transform: scale(1.2);
+    }
+    
+    @media (max-width: 768px) {
+      .wedding-logo { width: 130px; height: 130px; margin-bottom: 30px; }
+      .logo-text { font-size: 2.5rem; }
+      .couple-names { font-size: 2.5rem; }
+      .hashtag { font-size: 1.6rem; }
+      .wedding-date { font-size: 1.8rem; letter-spacing: 4px; }
+      .time-unit { min-width: 140px; padding: 30px 25px; }
+      .time-number { font-size: 3rem; }
+      nav a { display: block; margin: 15px 0; font-size: 1rem; }
+      .section-title { font-size: 3rem; }
+      .events { grid-template-columns: 1fr; }
+      .countdown { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-background"></div>
+    <div class="ornamental-frame"></div>
+    
+    <!-- Wedding Logo -->
+    <div class="wedding-logo">
+      <img src="logo.png" alt="Wedding Logo" style="width: 140px; height: 140px; object-fit: contain; border-radius: 50%;">
+    </div>
+    
+    <!-- Content Over Image -->
+    <div class="hero-content">
+      <div class="heart-icon">💕</div>
+      
+      <div class="couple-names">Shubham & Siddheshwari</div>
+      
+      <div class="flourish"></div>
+      
+      <div class="hashtag">#ShubhSidForever</div>
+      
+      <div class="wedding-date">02 | 12 | 2025</div>
+    </div>
+  </div>
+  
+  <!-- Countdown Section -->
+  <div class="countdown-section">
+    <div class="countdown" id="countdown">
+      <div class="time-unit">
+        <span class="time-number" id="days">00</span>
+        <span class="time-label">DAYS</span>
       </div>
-
-      <p class="message">
-        "She’s the smile, he’s the reason - together, endless laughter"
-      </p>
-
-      <div class="rings">💍</div>
-
-      <div class="instagram-section">
-        <p class="info-text">For more details and updates:</p>
-        <a
-          href="https://instagram.com/shubhsidforever"
-          target="_blank"
-          class="instagram-link"
-        >
-          <span class="instagram-icon">📷</span>
-          <span>@shubhsidforever</span>
-        </a>
+      <div class="time-unit">
+        <span class="time-number" id="hours">00</span>
+        <span class="time-label">HOURS</span>
       </div>
-
-      <div class="footer">
-        Made with <span class="footer-heart">♥</span> from Sarthak
+      <div class="time-unit">
+        <span class="time-number" id="minutes">00</span>
+        <span class="time-label">MINUTES</span>
+      </div>
+      <div class="time-unit">
+        <span class="time-number" id="seconds">00</span>
+        <span class="time-label">SECONDS</span>
       </div>
     </div>
-
-    <script>
-      const weddingDate = new Date("December 2, 2025 00:00:00").getTime();
-
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
-
-        if (distance < 0) {
-          document.getElementById("countdown").innerHTML =
-            "<div style=\"font-size: 2.5rem; color: #c94b4b; font-family: 'Great Vibes', cursive;\">🎉 It's Our Wedding Day! 🎉</div>";
-          return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("days").textContent = String(days).padStart(
-          2,
-          "0"
-        );
-        document.getElementById("hours").textContent = String(hours).padStart(
-          2,
-          "0"
-        );
-        document.getElementById("minutes").textContent = String(
-          minutes
-        ).padStart(2, "0");
-        document.getElementById("seconds").textContent = String(
-          seconds
-        ).padStart(2, "0");
+  </div>
+  
+  <!-- Navigation -->
+  <nav>
+    <a href="#story">Our Story</a>
+    <a href="#events">Events</a>
+    <a href="#location">Venue</a>
+  </nav>
+  
+  <!-- Our Story Section -->
+  <section id="story">
+    <h2 class="section-title">Our Story</h2>
+    <div class="story-content">
+      <p>Two hearts, one love story. From the moment we met, we knew our journey together would be extraordinary. Through laughter, adventures, and countless memories, we've grown closer each day. Now, we're ready to begin our forever together, and we can't wait to celebrate this beautiful moment with all of you!</p>
+    </div>
+  </section>
+  
+  <!-- Events Section -->
+  <section id="events">
+    <h2 class="section-title">Wedding Events</h2>
+    <div class="events">
+      
+      <div class="event-card">
+        <div class="event-icon">👐🏽🌿❦।</div>
+        <h3 class="event-title">मेहंदी</h3>
+        <div class="event-details">
+          <p><strong>Date:</strong> November 28, 2025</p>
+          <p><strong>Time:</strong> 5:00 PM onwards</p>
+          <p><strong>Venue:</strong> Bride's Residence</p>
+        </div>
+      </div>
+      
+      <div class="event-card">
+        <div class="event-icon">🌺</div>
+        <h3 class="event-title">गोंधळ</h3>
+        <div class="event-details">
+          <p><strong>Date:</strong> November 30, 2025</p>
+          <p><strong>Time:</strong> 3:00 PM</p>
+          <p><strong>Venue:</strong> Groom's Residence</p>
+        </div>
+      </div>
+      
+      <div class="event-card">
+        <div class="event-icon">🦋⃝💍</div>
+        <h3 class="event-title">साखरपुडा</h3>
+        <div class="event-details">
+          <p><strong>Date:</strong> December 02, 2025</p>
+          <p><strong>Time:</strong> 11:00 AM</p>
+          <p><strong>Venue:</strong> Nandalal Lawns</p>
+        </div>
+      </div>
+      
+      <div class="event-card">
+        <div class="event-icon">🌼💛🌼</div>
+        <h3 class="event-title">हळदी</h3>
+        <div class="event-details">
+          <p><strong>Date:</strong> December 2, 2025</p>
+          <p><strong>Time:</strong> 12:30 PM</p>
+          <p><strong>Venue:</strong> Nandalal Lawns</p>
+        </div>
+      </div>
+      
+      <div class="event-card">
+        <div class="event-icon">❤️</div>
+        <h3 class="event-title">शुभविवाह</h3>
+        <div class="event-details">
+          <p><strong>Date:</strong> December 2, 2025</p>
+          <p><strong>Time:</strong> 05:53 PM</p>
+          <p><strong>Venue:</strong> Nandalal Lawns</p>
+        </div>
+      </div>
+      
+      <div class="event-card">
+        <div class="event-icon">🛕🪷</div>
+        <h3 class="event-title">सत्यनारायण पूजा</h3>
+        <div class="event-details">
+          <p><strong>Date:</strong> December 3, 2025</p>
+          <p><strong>Time:</strong> 03:00 PM</p>
+          <p><strong>Venue:</strong> Groom's Residence</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Location Section -->
+  <section id="location">
+    <h2 class="section-title">Venue Location</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 20px; font-size: 1.1rem;">
+      Join us at our wedding venue. We can't wait to celebrate with you!
+    </p>
+    
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD1VnYC6EugmolDY9RjsZ77TeXstyj0288&q=Nandalal+Lawns&center=19.2542462,73.9133113&zoom=12"
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    
+    <p style="text-align: center; margin-top: 30px; color: #666; font-size: 1.1rem;">
+      <strong style="color: #8b0000;">Address:</strong> Nandalal Lawns, NH-61, Otur, Pune - Maharashtra
+    </p>
+  </section>
+  
+  <!-- Instagram Section -->
+  <div class="instagram-section">
+    <h2 style="font-family: 'Great Vibes', cursive; font-size: 4rem; margin-bottom: 20px; background: linear-gradient(135deg, #8b0000, #dc143c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+      Follow Our Journey
+    </h2>
+    <p style="font-size: 1.2rem; margin-bottom: 10px;">
+      For more updates, photos, and live moments
+    </p>
+    <a href="https://instagram.com/shubhsidforever" target="_blank" class="instagram-link">
+      <span style="font-size: 1.8rem;">📷</span>
+      <span>@shubhsidforever</span>
+    </a>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p style="font-size: 1.2rem; margin-bottom: 15px;">
+      We can't wait to celebrate with you! 💕
+    </p>
+    <p style="margin-top: 25px; color: #888; font-size: 1rem;">
+      Made with <span class="footer-heart">♥</span> from Sarthak
+    </p>
+  </footer>
+  
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="wedding-song.mp3" type="audio/mpeg">
+  </audio>
+  
+  <!-- Music Enable Popup -->
+  <div id="musicPopup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+    <div style="background: white; padding: 50px 60px; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); text-align: center; max-width: 500px; width: 90%;">
+      
+      <!-- Music Note Icon -->
+      <div style="font-size: 5rem; color: #8b0000; margin-bottom: 20px;">🎵</div>
+      
+      <!-- Title -->
+      <h2 style="font-family: 'Cinzel', serif; font-size: 2rem; color: #333; margin-bottom: 15px; font-weight: 700;">Enable Background Music</h2>
+      
+      <!-- Description -->
+      <p style="font-size: 1.1rem; color: #666; margin-bottom: 30px; line-height: 1.6;">Tap to enable beautiful wedding music throughout your experience</p>
+      
+      <!-- Try Again Button -->
+      <button onclick="enableMusic()" style="background: linear-gradient(135deg, #8b0000, #dc143c); color: white; padding: 18px 50px; border: none; border-radius: 50px; font-size: 1.2rem; cursor: pointer; box-shadow: 0 10px 30px rgba(220,20,60,0.4); transition: all 0.3s; font-weight: 600; display: flex; align-items: center; gap: 15px; margin: 0 auto;">
+        <span style="font-size: 1.5rem;">▶</span>
+        <span>Try Again</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Music Control Bar - Bottom Right -->
+  <div class="music-control-bar" id="musicControlBar">
+    <span class="music-icon">🎵</span>
+    <button class="music-button" id="playPauseBtn" onclick="toggleMusic()">⏸️</button>
+    <span class="volume-icon" id="volumeIcon" onclick="toggleMute()">🔊</span>
+  </div>
+  
+  <script>
+    // Create floating particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.width = Math.random() * 5 + 2 + 'px';
+      particle.style.height = particle.style.width;
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 6 + 's';
+      particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+      particlesContainer.appendChild(particle);
+    }
+    
+    // Countdown Timer
+    const weddingDate = new Date("December 2, 2025 17:53:00").getTime();
+    
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+      
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = 
+          '<div style="font-size: 3rem; background: linear-gradient(135deg, #8b0000, #dc143c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: \'Great Vibes\', cursive;">🎉 It\'s Our Wedding Day! 🎉</div>';
+        return;
       }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    </script>
-  </body>
+      
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      document.getElementById("days").textContent = String(days).padStart(2, '0');
+      document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    
+    // Music Control Variables
+    const music = document.getElementById('bgMusic');
+    const musicPopup = document.getElementById('musicPopup');
+    const musicControlBar = document.getElementById('musicControlBar');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const volumeIcon = document.getElementById('volumeIcon');
+    let isPlaying = false;
+    let isMuted = false;
+    
+    music.volume = 0.6;
+    
+    // Enable Music Function (called from popup button)
+    function enableMusic() {
+      music.play()
+        .then(() => {
+          isPlaying = true;
+          playPauseBtn.textContent = '⏸';
+          musicPopup.style.display = 'none';
+          musicControlBar.style.display = 'flex';
+          console.log('🎵 Music started!');
+        })
+        .catch((error) => {
+          console.log('Unable to play music:', error);
+          // Keep popup open if failed
+        });
+    }
+    
+    // Toggle Play/Pause
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+        playPauseBtn.textContent = '▶';
+        isPlaying = false;
+      } else {
+        music.play();
+        playPauseBtn.textContent = '⏸';
+        isPlaying = true;
+      }
+    }
+    
+    // Toggle Mute/Unmute
+    function toggleMute() {
+      if (isMuted) {
+        music.muted = false;
+        volumeIcon.textContent = '🔊';
+        isMuted = false;
+      } else {
+        music.muted = true;
+        volumeIcon.textContent = '🔇';
+        isMuted = true;
+      }
+    }
+    
+    // Try to auto-start music (if browser allows)
+    setTimeout(() => {
+      music.play()
+        .then(() => {
+          isPlaying = true;
+          playPauseBtn.textContent = '⏸';
+          musicPopup.style.display = 'none';
+          musicControlBar.style.display = 'flex';
+        })
+        .catch(() => {
+          // Show popup if autoplay blocked
+          musicPopup.style.display = 'flex';
+        });
+    }, 500);
+  </script>
+  
+</body>
 </html>
